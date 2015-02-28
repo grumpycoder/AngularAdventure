@@ -215,7 +215,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BreezeWebApiConfig.cs" />
+    <Compile Include="Controllers\BreezeController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AngularAdventure.DataAccess\AngularAdventure.DataAccess.csproj">
+      <Project>{126D44D3-214E-40F2-B6DD-CB1BB7B582F0}</Project>
+      <Name>AngularAdventure.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AngularAdventure.Model\AngularAdventure.Model.csproj">
+      <Project>{C36E29BA-95DF-471F-A925-69B81F4FB46D}</Project>
+      <Name>AngularAdventure.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
