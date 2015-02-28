@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularAdventure.Model", "AngularAdventure.Model\AngularAdventure.Model.csproj", "{C36E29BA-95DF-471F-A925-69B81F4FB46D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularAdventure.DataAccess", "AngularAdventure.DataAccess\AngularAdventure.DataAccess.csproj", "{126D44D3-214E-40F2-B6DD-CB1BB7B582F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularAdventure.Web", "AngularAdventure.Web\AngularAdventure.Web.csproj", "{87F96909-491C-405F-A309-C1A19DEBDA66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C36E29BA-95DF-471F-A925-69B81F4FB46D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36E29BA-95DF-471F-A925-69B81F4FB46D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C36E29BA-95DF-471F-A925-69B81F4FB46D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C36E29BA-95DF-471F-A925-69B81F4FB46D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{126D44D3-214E-40F2-B6DD-CB1BB7B582F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{126D44D3-214E-40F2-B6DD-CB1BB7B582F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{126D44D3-214E-40F2-B6DD-CB1BB7B582F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{126D44D3-214E-40F2-B6DD-CB1BB7B582F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87F96909-491C-405F-A309-C1A19DEBDA66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87F96909-491C-405F-A309-C1A19DEBDA66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87F96909-491C-405F-A309-C1A19DEBDA66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87F96909-491C-405F-A309-C1A19DEBDA66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
