@@ -2,14 +2,22 @@
     'use strict';
 
     var serviceId = 'datacontext';
-    angular.module('app').factory(serviceId, ['common', datacontext]);
+    angular.module('app').factory(serviceId,
+        ['common', 'config', 'entityManagerFactory', datacontext]);
 
-    function datacontext(common) {
+    function datacontext(common, config, emFactory) {
+        var EntityQuery = breeze.EntityQuery;
+        var getLogFn = common.logger.getLogFn;
+        var log = getLogFn(serviceId);
+        var logError = getLogFn(serviceId, 'error');
+        var logSuccess = getLogFn(serviceId, 'success');
+        var manager = emFactory.newManager();
         var $q = common.$q;
 
         var service = {
             getPeople: getPeople,
-            getMessageCount: getMessageCount
+            getMessageCount: getMessageCount,
+            getProductPartials: getProductPartials
         };
 
         return service;
@@ -27,6 +35,34 @@
                 { firstName: 'Haley', lastName: 'Guthrie', age: 35, location: 'Wyoming' }
             ];
             return $q.when(people);
+        }
+
+        function getProductPartials() {
+            var orderBy = 'name';
+            var products;
+
+            return EntityQuery.from('Products')
+                .select('productID, name, productNumber, color, standardCost, listPrice, sellStartDate')
+                //.select('productID')
+                .orderBy(orderBy)
+                .toType('Product')
+                .using(manager)
+                .execute()
+                .then(querySucceeded, _queryFailed);
+
+            function querySucceeded(data) {
+                products = data.results;
+                log('Retrieved [Product Partials] from remote data source', products.length, true);
+                //log('products', products, false);
+                return products;
+            }
+        }
+
+        function _queryFailed(error) {
+            //var msg = config.appErrorPrefix + 'Error retrieving data' + error.message;
+            var msg = 'Error retrieving data' + error.message;
+            logError(msg, error);
+            throw error;
         }
     }
 })();

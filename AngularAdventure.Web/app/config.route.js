@@ -24,6 +24,8 @@
                 config: {
                     templateUrl: 'app/dashboard/dashboard.html',
                     title: 'dashboard',
+                    controller: 'dashboard',
+                    controllerAs: 'vm',
                     settings: {
                         nav: 1,
                         content: '<i class="fa fa-dashboard"></i> Dashboard'
@@ -33,10 +35,24 @@
                 url: '/admin',
                 config: {
                     title: 'admin',
+                    controller: 'admin',
+                    controllerAs: 'vm',
                     templateUrl: 'app/admin/admin.html',
                     settings: {
                         nav: 2,
                         content: '<i class="fa fa-lock"></i> Admin'
+                    }
+                }
+            }, {
+                url: '/products',
+                config: {
+                    title: 'products',
+                    controller: 'products',
+                    controllerAs: 'vm', 
+                    templateUrl: 'app/product/products.html',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-bicycle"></i> Products'
                     }
                 }
             }

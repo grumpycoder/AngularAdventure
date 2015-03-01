@@ -21,8 +21,6 @@ namespace AngularAdventure.Model
         [StringLength(50)]
         public string AddressType { get; set; }
 
-        public Guid rowguid { get; set; }
-
         public DateTime ModifiedDate { get; set; }
 
         public virtual Address Address { get; set; }

@@ -22,8 +22,6 @@ namespace AngularAdventure.Model
         [StringLength(6)]
         public string Culture { get; set; }
 
-        public Guid rowguid { get; set; }
-
         public DateTime ModifiedDate { get; set; }
 
         public virtual ProductDescription ProductDescription { get; set; }

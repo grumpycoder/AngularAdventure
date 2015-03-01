@@ -52,8 +52,6 @@ namespace AngularAdventure.Model
         [StringLength(50)]
         public string ThumbnailPhotoFileName { get; set; }
 
-        public Guid rowguid { get; set; }
-
         public DateTime ModifiedDate { get; set; }
 
         public virtual ProductCategory ProductCategory { get; set; }

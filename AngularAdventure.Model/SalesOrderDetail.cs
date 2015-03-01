@@ -30,8 +30,6 @@ namespace AngularAdventure.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public decimal LineTotal { get; set; }
 
-        public Guid rowguid { get; set; }
-
         public DateTime ModifiedDate { get; set; }
 
         public virtual Product Product { get; set; }

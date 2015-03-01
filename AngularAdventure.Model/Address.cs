@@ -40,8 +40,6 @@ namespace AngularAdventure.Model
         [StringLength(15)]
         public string PostalCode { get; set; }
 
-        public Guid rowguid { get; set; }
-
         public DateTime ModifiedDate { get; set; }
 
         public virtual ICollection<CustomerAddress> CustomerAddress { get; set; }

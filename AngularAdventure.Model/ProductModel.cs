@@ -23,8 +23,6 @@ namespace AngularAdventure.Model
         [Column(TypeName = "xml")]
         public string CatalogDescription { get; set; }
 
-        public Guid rowguid { get; set; }
-
         public DateTime ModifiedDate { get; set; }
 
         public virtual ICollection<Product> Product { get; set; }
