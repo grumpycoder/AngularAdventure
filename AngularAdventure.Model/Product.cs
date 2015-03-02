@@ -13,7 +13,11 @@ namespace AngularAdventure.Model
             SalesOrderDetail = new HashSet<SalesOrderDetail>();
         }
 
-        public int ProductID { get; set; }
+        //[Column("ProductId")]
+        //public int Id { get; set; }
+
+
+        public int ProductId { get; set; }
 
         [Required]
         [StringLength(50)]
