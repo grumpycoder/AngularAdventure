@@ -1,13 +1,14 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'products';
-    angular.module('app').controller(controllerId, ['common', 'datacontext', products]);
+    angular.module('app').controller(controllerId, ['$location', 'common', 'datacontext', products]);
 
-    function products(common, datacontext) {
+    function products($location, common, datacontext) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
         var vm = this;
+        vm.gotoProduct = gotoProduct; 
         vm.title = 'Products';
         vm.products = [];
 
@@ -23,6 +24,12 @@
                 vm.products = data;
                 return vm.products; 
             });
+        }
+
+        function gotoProduct(product) {
+            if (product && product.productId) {
+                $location.path('/product/' + product.productId);
+            }
         }
     }
 })();

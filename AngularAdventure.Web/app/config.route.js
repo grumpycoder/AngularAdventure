@@ -51,9 +51,19 @@
                     controllerAs: 'vm', 
                     templateUrl: 'app/product/products.html',
                     settings: {
-                        nav: 2,
+                        nav: 3,
                         content: '<i class="fa fa-bicycle"></i> Products'
                     }
+                }
+            }
+            , {
+                url: '/product/:id',
+                config: {
+                    title: 'productdetail',
+                    controller: 'productdetail',
+                    controllerAs: 'vm',
+                    templateUrl: 'app/product/productdetail.html',
+                    settings: {}
                 }
             }
         ];

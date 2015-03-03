@@ -3,9 +3,11 @@
 
     var serviceId = 'datacontext';
     angular.module('app').factory(serviceId,
-        ['common', 'config', 'entityManagerFactory', datacontext]);
+        ['common', 'config', 'entityManagerFactory', 'model', datacontext]);
 
-    function datacontext(common, config, emFactory) {
+    function datacontext(common, config, emFactory, model) {
+        var entityNames = model.entityNames;
+
         var EntityQuery = breeze.EntityQuery;
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(serviceId);
@@ -17,7 +19,8 @@
         var service = {
             getPeople: getPeople,
             getMessageCount: getMessageCount,
-            getProductPartials: getProductPartials
+            getProductPartials: getProductPartials,
+            getProductById: getProductById
         };
 
         return service;
@@ -42,8 +45,7 @@
             var products;
 
             return EntityQuery.from('Products')
-                .select('productID, name, productNumber, color, standardCost, listPrice, sellStartDate')
-                //.select('productID')
+                .select('productId, name, productNumber, color, standardCost, listPrice, sellStartDate')
                 .orderBy(orderBy)
                 .toType('Product')
                 .using(manager)
@@ -58,9 +60,24 @@
             }
         }
 
+        function getProductById(id) {
+
+            return EntityQuery.from('Products')
+                .where('productId', '==', id)
+                .toType('Product')
+                .using(manager)
+                .execute()
+                .then(querySucceeded, _queryFailed);
+
+            function querySucceeded(data) {
+                var entity = data.results[0];
+                return entity; 
+            }
+        }
+
+
         function _queryFailed(error) {
-            //var msg = config.appErrorPrefix + 'Error retrieving data' + error.message;
-            var msg = 'Error retrieving data' + error.message;
+            var msg = config.appErrorPrefix + 'Error retrieving data' + error.message;
             logError(msg, error);
             throw error;
         }
