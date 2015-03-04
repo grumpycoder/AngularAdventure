@@ -4,10 +4,10 @@
     var controllerId = 'productdetail';
 
     angular.module('app').controller(controllerId,
-        ['$routeParams', '$scope', '$window',
+        ['$location', '$routeParams', '$scope', '$window', 'bootstrap.dialog',
             'common', 'config', 'datacontext', productdetail]);
 
-    function productdetail($routeParams, $scope, $window,
+    function productdetail($location, $routeParams, $scope, $window, bsDialog,
             common, config, datacontext) {
         var vm = this;
         var getLogFn = common.logger.getLogFn;
@@ -18,6 +18,7 @@
         // Bindable properties and functions are placed on vm.
         vm.cancel = cancel;
         vm.categories = [];
+        vm.deleteProduct = deleteProduct; 
         vm.goBack = goBack;
         vm.hasChanges = false;
         vm.isSaving = false;
@@ -54,6 +55,27 @@
             datacontext.cancel();
         }
 
+        function deleteProduct() {
+            return bsDialog.deleteDialog('Product')
+             .then(confirmDelete);
+
+            function confirmDelete() {
+                datacontext.markDeleted(vm.product);
+                vm.save().then(success, failed);
+
+                function success() {
+                    gotoProducts();
+                }
+
+                function failed(error) {
+                    cancel(); // Makes the entity available to edit again
+                }
+            }
+        }
+
+        function gotoProducts() {
+            $location.path('/products');
+        }
 
         function getRequestedProduct() {
             var val = $routeParams.id;
