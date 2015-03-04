@@ -10,15 +10,15 @@ namespace AngularAdventure.Model
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int SalesOrderID { get; set; }
+        public int SalesOrderId { get; set; }
 
         [Key]
         [Column(Order = 1)]
-        public int SalesOrderDetailID { get; set; }
+        public int SalesOrderDetailId { get; set; }
 
         public short OrderQty { get; set; }
 
-        public int ProductID { get; set; }
+        public int ProductId { get; set; }
 
         [Column(TypeName = "money")]
         public decimal UnitPrice { get; set; }

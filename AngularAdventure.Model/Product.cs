@@ -41,9 +41,9 @@ namespace AngularAdventure.Model
 
         public decimal? Weight { get; set; }
 
-        public int? ProductCategoryID { get; set; }
+        public int? ProductCategoryId { get; set; }
 
-        public int? ProductModelID { get; set; }
+        public int? ProductModelId { get; set; }
 
         public DateTime SellStartDate { get; set; }
 

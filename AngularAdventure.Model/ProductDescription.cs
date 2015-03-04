@@ -13,7 +13,7 @@ namespace AngularAdventure.Model
             ProductModelProductDescription = new HashSet<ProductModelProductDescription>();
         }
 
-        public int ProductDescriptionID { get; set; }
+        public int ProductDescriptionId { get; set; }
 
         [Required]
         [StringLength(400)]

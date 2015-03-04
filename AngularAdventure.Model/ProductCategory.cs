@@ -14,9 +14,9 @@ namespace AngularAdventure.Model
             ProductCategory1 = new HashSet<ProductCategory>();
         }
 
-        public int ProductCategoryID { get; set; }
+        public int ProductCategoryId { get; set; }
 
-        public int? ParentProductCategoryID { get; set; }
+        public int? ParentProductCategoryId { get; set; }
 
         [Required]
         [StringLength(50)]

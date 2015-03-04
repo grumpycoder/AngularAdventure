@@ -10,12 +10,12 @@ namespace AngularAdventure.Model
         [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ProductModelID { get; set; }
+        public int ProductModelId { get; set; }
 
         [Key]
         [Column(Order = 1)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ProductDescriptionID { get; set; }
+        public int ProductDescriptionId { get; set; }
 
         [Key]
         [Column(Order = 2)]

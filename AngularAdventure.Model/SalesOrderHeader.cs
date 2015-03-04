@@ -14,7 +14,7 @@ namespace AngularAdventure.Model
         }
 
         [Key]
-        public int SalesOrderID { get; set; }
+        public int SalesOrderId { get; set; }
 
         public byte RevisionNumber { get; set; }
 
@@ -39,11 +39,11 @@ namespace AngularAdventure.Model
         [StringLength(15)]
         public string AccountNumber { get; set; }
 
-        public int CustomerID { get; set; }
+        public int CustomerId { get; set; }
 
-        public int? ShipToAddressID { get; set; }
+        public int? ShipToAddressId { get; set; }
 
-        public int? BillToAddressID { get; set; }
+        public int? BillToAddressId { get; set; }
 
         [Required]
         [StringLength(50)]

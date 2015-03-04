@@ -31,12 +31,12 @@ namespace AngularAdventure.DataAccess
             modelBuilder.Entity<Address>()
                 .HasMany(e => e.SalesOrderHeader)
                 .WithOptional(e => e.Address)
-                .HasForeignKey(e => e.BillToAddressID);
+                .HasForeignKey(e => e.BillToAddressId);
 
             modelBuilder.Entity<Address>()
                 .HasMany(e => e.SalesOrderHeader1)
                 .WithOptional(e => e.Address1)
-                .HasForeignKey(e => e.ShipToAddressID);
+                .HasForeignKey(e => e.ShipToAddressId);
 
             modelBuilder.Entity<Customer>()
                 .Property(e => e.PasswordHash)
@@ -76,7 +76,7 @@ namespace AngularAdventure.DataAccess
             modelBuilder.Entity<ProductCategory>()
                 .HasMany(e => e.ProductCategory1)
                 .WithOptional(e => e.ProductCategory2)
-                .HasForeignKey(e => e.ParentProductCategoryID);
+                .HasForeignKey(e => e.ParentProductCategoryId);
 
             modelBuilder.Entity<ProductDescription>()
                 .HasMany(e => e.ProductModelProductDescription)

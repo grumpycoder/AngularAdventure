@@ -14,7 +14,7 @@ namespace AngularAdventure.Model
             SalesOrderHeader = new HashSet<SalesOrderHeader>();
         }
 
-        public int CustomerID { get; set; }
+        public int CustomerId { get; set; }
 
         public bool NameStyle { get; set; }
 
