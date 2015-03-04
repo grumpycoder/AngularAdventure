@@ -13,10 +13,10 @@
         var entityNames = {
             product: 'Product',
             customer: 'Customer',
-            order: 'SalesOrder',
-            models: 'ProductModel',
-            description: 'ProductDescription',
-            category: 'ProductCategory'
+            SalesOrder: 'SalesOrder',
+            category: 'ProductCategory',
+            model: 'ProductModel',
+            description: 'ProductDescription'
         };
 
         var service = {
